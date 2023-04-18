@@ -28,9 +28,8 @@ jobs:
     - name: Set the value
       id: step_one
       run: |
-        echo "action_state=yellow" >> $GITHUB_ENV
+        py pyScript.py
     - name: Use the value
       id: step_two
       run: |
-
         echo "${{ env.action_state }}" # This will output 'yellow'
