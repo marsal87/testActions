@@ -25,11 +25,15 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    - name: Set the value
+    - name: Set the initial value
       id: step_one
+      run: |
+        echo "action_state=init" >> $GITHUB_ENV
+    - name: Set the value
+      id: step_two
       run: |
         py pyScript.py
     - name: Use the value
-      id: step_two
+      id: step_three
       run: |
         echo "${{ env.action_state }}" # This will output 'yellow'
