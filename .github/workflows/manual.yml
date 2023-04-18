@@ -29,5 +29,5 @@ jobs:
     - name: Set the value
       id: step_two
       run: |
-        py pyScript.py
+        py pyScript.py &&
         echo "${{ env.action_state }}" # This will output 'yellow'
